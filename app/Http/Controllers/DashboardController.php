@@ -9,8 +9,4 @@ class DashboardController extends Controller
     public function dashboard(){
         return view('DashBoard');
     }
-
-    public function signup(){
-        return view('Signup');
-    }
 }

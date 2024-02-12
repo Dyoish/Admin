@@ -21,38 +21,33 @@ use App\Http\Controllers\DashboardController;
 
 // Route::get('/signup',[SignupController::class, 'signup']);
 
-Route::get('/', function(){
-    return  view('Dashboards');
+Route::get('/', function () {
+    return view('Dashboards');
 });
 
-Route::get('/dashboards', function(){
-    return  view('Dashboards');
+Route::get('/dashboards', function () {
+    return view('Dashboards');
 });
 
-Route::get('/customers', function(){
-    return  view('Customers');
+Route::get('/analytics', function () {
+    return view('Analytics');
 });
 
-Route::get('/agegroups', function(){
-    return  view('Agegroups');
+Route::get('/customers', function () {
+    return view('Customers');
 });
 
-Route::get('/productmanagements', function(){
-    return  view('Productmanagement');
+Route::get('/agegroups', function () {
+    return view('Agegroups');
 });
 
-Route::get('crud',[App\Http\Controllers\crudController::class,'index']);
-Route::get('crud/create',[App\Http\Controllers\crudController::class,'create']);
-Route::post('crud/create',[App\Http\Controllers\crudController::class,'store']);
-Route::get('crud/{id}/edit',[App\Http\Controllers\crudController::class,'edit']);
-Route::put('crud/{id}/edit',[App\Http\Controllers\crudController::class,'update']);
-Route::get('crud/{id}/delete',[App\Http\Controllers\crudController::class,'destroy']);
+Route::get('/productmanagements', function () {
+    return view('Productmanagement');
+});
 
-
-
-
-
-
-
-
-
+Route::get('crud', [App\Http\Controllers\crudController::class, 'index']);
+Route::get('crud/create', [App\Http\Controllers\crudController::class, 'create']);
+Route::post('crud/create', [App\Http\Controllers\crudController::class, 'store']);
+Route::get('crud/{id}/edit', [App\Http\Controllers\crudController::class, 'edit']);
+Route::put('crud/{id}/edit', [App\Http\Controllers\crudController::class, 'update']);
+Route::get('crud/{id}/delete', [App\Http\Controllers\crudController::class, 'destroy']);

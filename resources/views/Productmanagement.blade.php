@@ -1,59 +1,76 @@
-<x-app-layout>
+<!DOCTYPE html>
+<html lang="en">
 
-    <x-slot name="title">crud app
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="assets/css/productmanagement.css" />
+    <script src="{{ asset('assests/js/jquery.js') }}"></script>
 
-    </x-slot>
+    <title>Product Management</title>
+</head>
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Teachers
-                            <a href="{{url('crud/create')}}"class="btn btn-primary float-end">add</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>name</th>
-                                    <th>age</th>
-                                    <th>address</th>
-                                    <th>department</th>
-                                    <th>action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($teachers as $item)
-                                <tr>
-                                    <td>{{$item -> id }}</td>
-                                    <td>{{$item -> Name}}</td>
-                                    <td>{{$item -> age}}</td>
-                                    <td>{{$item -> address}}</td>
-                                    <td>{{$item -> department}}</td>
-                                    <td>
-                                        <a href="{{url('crud/'.$item -> id.'/edit')}}" class="btn btn-success mx-2">Edit</a>
-                                    <a 
-                                        href="{{url('crud/'.$item -> id.'/delete')}}" 
-                                        class ="btn btn-danger mx-1"
-                                        onclick ="return confirm('Are you sure?')"
-                                    >
-                                        Delete</a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+<body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class="bx bxs-smile"></i>
+            <span class="text">Cyber Cartel</span>
+        </a>
+        <ul class="side-menu top">
+            <li>
+                <a href="{{ url('/dashboards') }}">
+                    <i class="bx bxs-dashboard"></i>
+                    <span class="text">Dashboards</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/analytics') }}">
+                    <i class="bx bxs-doughnut-chart"></i>
+                    <span class="text">Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/customers') }}">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Customers</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/agegroups') }}">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Age Group</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="{{ url('/productmanagements') }}">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Product Management</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+
+
+    <!-- CONTENT -->
+    <section id="content">
+
+        <!-- MAIN -->
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>Product Management</h1>
+                    <ul class="breadcrumb"></ul>
                 </div>
             </div>
-        </div>
-    </div>
-    <x-slot name="scripts">
-    </x-slot>
 
-</x-app-layout>
+        </main>
+    </section>
+</body>
 
-<!-- dito natapos -->
+</html>
