@@ -61,15 +61,61 @@
     <section id="content">
 
         <!-- MAIN -->
-        <main>
-            <div class="head-title">
-                <div class="left">
+    <main>
+            <div class="content">
+                <div class="head-title">
+                    <div class="left">
                     <h1>Product Management</h1>
                     <ul class="breadcrumb"></ul>
+                    </div>
                 </div>
+            <div>
+                <a class="btn btn-success" a href="{{url('productmanagements/create')}}"class="btn"> Add product</a>
             </div>
+        </div>
+        
+                    <ul class="box-info">
+                        <li>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Photo</th>
+                                    <th>Price</th>
+                                    <th>Detail</th>
+                                    <th>Category</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($products as $item)
+                                <tr>
+                                    <td>{{$item -> id }}</td>
+                                    <td>{{$item -> name}}</td>
+                                    <td>
+                                    <img src="{{ asset($item->photo) }}" style="width: 70px; height:70px;" alt="Img" />
+                                    </td>
+                                    <td>₱ {{$item -> price}}</td>
+                                    <td>{{$item -> details}}</td>
+                                    <td>{{$item -> category}}</td>
+                                    <td>
+                                        <a href="{{url('productmanagements/'.$item -> id.'/edit')}}" class="edit-button">Edit</a>
+                                    <a 
+                                        href="{{url('productmanagements/'.$item -> id.'/delete')}}" 
+                                        class ="delete-button"
+                                        onclick ="return confirm('Are you sure?')"
+                                    >
+                                        Delete</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        </li>                        
+                    </ul>
+    </main>
 
-        </main>
     </section>
 </body>
 

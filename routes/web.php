@@ -45,9 +45,9 @@ Route::get('/productmanagements', function () {
     return view('Productmanagement');
 });
 
-Route::get('crud', [App\Http\Controllers\crudController::class, 'index']);
-Route::get('crud/create', [App\Http\Controllers\crudController::class, 'create']);
-Route::post('crud/create', [App\Http\Controllers\crudController::class, 'store']);
-Route::get('crud/{id}/edit', [App\Http\Controllers\crudController::class, 'edit']);
-Route::put('crud/{id}/edit', [App\Http\Controllers\crudController::class, 'update']);
-Route::get('crud/{id}/delete', [App\Http\Controllers\crudController::class, 'destroy']);
+Route::get('productmanagements',[App\Http\Controllers\productController::class,'index']);
+Route::get('productmanagements/create',[App\Http\Controllers\productController::class,'create']);
+Route::post('productmanagements/create',[App\Http\Controllers\productController::class,'store']);
+Route::get('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'edit']);
+Route::put('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'update']);
+Route::get('productmanagements/{id}/delete',[App\Http\Controllers\productController::class,'destroy']);
